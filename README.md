@@ -82,20 +82,24 @@ Generalized to all the nodes in the second layer (16), then this matrix will hav
 Imagine a little nn with 5 and 1 nodes in hidden layer.
 
 Inputs:
-[i0]
-[i1]
-[i2]
-[i3]
-[i4]
+[i0]  
+[i1]  
+[i2]  
+[i3]  
+[i4]  
 
 Nodes in hidden layer:
 [(w0,0),(w0,1),(w0,2),(w0,3),(w0,4)]
 
-Each row of these matrix corresponds to the weights or connections between all inputs and on node.
+Each row of this matrix corresponds to the weights or connections between all inputs and one node.
 
 You can take the dot product of these two now and that will be the weighted sum. Simple linear algebra!
 
-In this chart below, when you do the dot product, each term of the output vector [n,1] is the product-sum of one row of weights X all the inputs vector. Using the example, one element would be sum of the product 728 inputs X 728 weights.
+In this chart below, when you do the dot product, each term of the output vector [n,1] is the product-sum of one row of weights times all the inputs vector. Using the example, one element of the result matrix is the sum of multiplying 728 inputs X its weight which is of shape [nodes in second layer, 1].
 
-![notation](images/weights_image.png)
+You can also represent the bias values as another vector of shape [nodes in second layer, 1], so one bias per node, and sum them easily.
+
+![notation](images/notation_simplified.png)
+
+### How do they learn?
 
